@@ -21,14 +21,13 @@ export default [
     input: "dist-esm/src/index.js",
     output: {
       file: `dist/index.browser.js`,
-      format: "umd",
+      format: "umd", // "iife" renders no improvement
     },
     plugins: [
       nodeResolve(),
       cjs({
-        // Doesn't work with dynamic require targets enforced either, but it
-        // does eliminate the circular dependency warnings.
-        //dynamicRequireTargets: ["node_modules/@opentelemetry/api/**/*.js"],
+        // This doesn't fix the problem
+        // dynamicRequireTargets: ["**/typeonly/**/*.js"],
       }),
     ],
   },
