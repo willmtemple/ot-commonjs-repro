@@ -1,0 +1,15 @@
+{
+  "name": "typeonly",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tslib": "^2.1.0",
+    "typescript": "~4.2.2"
+  }
+}

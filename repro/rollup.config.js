@@ -14,7 +14,7 @@ export default [
       ...Object.keys(pkg.dependencies),
       ...Object.keys(pkg.devDependencies),
     ],
-    output: { file: "dist/index.js", format: "cjs", sourcemap: true },
+    output: {file: "dist/index.js", format: "cjs", sourcemap: true},
     plugins: [nodeResolve(), cjs()],
   },
   {
@@ -24,13 +24,11 @@ export default [
       format: "umd",
     },
     plugins: [
-      nodeResolve({
-        mainFields: ["browser", "module"],
-      }),
+      nodeResolve(),
       cjs({
         // Doesn't work with dynamic require targets enforced either, but it
         // does eliminate the circular dependency warnings.
-        dynamicRequireTargets: ["**/node_modules/@opentelemetry/api/**/*.js"],
+        //dynamicRequireTargets: ["node_modules/@opentelemetry/api/**/*.js"],
       }),
     ],
   },
